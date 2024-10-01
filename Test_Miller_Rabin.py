@@ -11,6 +11,7 @@ def MCD(a,b):
         a=b
         b=r
         print(f"a,b: {a,b}")
+    print(f"a,b: {a,b}")
     return a
 
 def gen_zw(N):
@@ -29,7 +30,7 @@ def gen_zw(N):
 def verifica(N,y,z,w):
     i=random.randint(0, w)
     print(f"i: {i}")
-    if(MCD(N,y) != 1 and (((y^z)%N)==1 or ((y^(z*2^i))%N)==-1)): 
+    if(MCD(N,y) != 1 or (((y^z)%N)==1 or ((y^(z*2^i))%N)==-1)): 
         return True
     else:
         return False
@@ -37,7 +38,7 @@ def verifica(N,y,z,w):
 def test_MR(N,k):
     z,w= gen_zw(N)
     print(f"z,w: {z,w}")
-    for i in range(0,k):
+    for j in range(0,k):
         y=random.randint(2, N-2)
         print(f"y:{y}")
         if verifica(N,y,z,w) == True:
@@ -47,7 +48,10 @@ def test_MR(N,k):
 
 if __name__== "__main__":
     n=int(sys.argv[1])
-    result=test_MR(n, 10) #probabilità di errore pari a 1/4^10 = 1/2^20 = 1/10^6
+    if n%2==0:
+        print(f"Il numero {n} è composto")
+        exit(1)
+    result=test_MR(n, 20) #probabilità di errore pari a 1/4^10 = 1/2^20 = 1/10^6
     if result == True:
         print(f"Il numero {n} è primo")
     else:
