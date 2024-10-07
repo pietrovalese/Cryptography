@@ -18,3 +18,4 @@ if __name__ == "__main__":
     # Generate a sequence of 15 numbers
     result = linear_generator(15)
     print(result)
+
