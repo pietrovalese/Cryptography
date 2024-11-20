@@ -1,7 +1,7 @@
 import sys
 import random
 
-# Function to calculate GCD (Euclid's algorithm)
+#Euclid's algorithm
 def MCD(a, b):
     while b != 0:
         a, b = b, a % b
