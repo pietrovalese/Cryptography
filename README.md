@@ -22,6 +22,9 @@ In this repository, I aim to recreate a variety of cryptographic algorithms to b
 ### RSA
 - **RSA Implementation**: This folder contains scripts for generating RSA keys and performing RSA encryption and decryption.
 
+### ElGamal
+- **ElGaml Implementation**: This folder contains scripts for generating ElGamal keys and performing ElGamal encryption and decryption.
+
 ## Dependencies
 Some scripts depend on others in this repository. Be sure to check the script dependencies before execution.
 

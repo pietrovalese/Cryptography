@@ -1,0 +1,24 @@
+# Ignora i file e le cartelle tipiche di un ambiente virtuale Python
+bin/
+lib/
+lib64/
+pyvenv.cfg
+include/
+share/
+
+# Ignora i file Python compilati
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignora file di log
+*.log
+
+# Ignora file di configurazione locali
+.env
+*.env
+
+# Ignora file di configurazione degli editor
+.idea/
+.vscode/
+*.swp
