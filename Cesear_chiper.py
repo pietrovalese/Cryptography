@@ -30,7 +30,7 @@ if __name__=="__main__":
     if len(sys.argv) != 2:
         print("Please choose one number to secure")
         sys.exit()
-    n = sys.argv[1] #Value to check
-    lis=simple_cesear(n)
-    lis_k=K_cesear(n,10)
+    s = sys.argv[1] #Value to check
+    lis=simple_cesear(s)
+    lis_k=K_cesear(s,10)
     print(lis, lis_k)

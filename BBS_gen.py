@@ -6,7 +6,7 @@ RANGE_START=10**20
 RANGE_END=10**40
 
 # Function to generate two large primes p and q, where p ≡ 3 (mod 4) and q ≡ 3 (mod 4)
-def gen_pq():
+def gen_pq_BBS():
     p=random.randint(RANGE_START,RANGE_END)
     q=random.randint(RANGE_START,RANGE_END)
     n1=2*(p//4)+1
@@ -30,12 +30,13 @@ def gen_pq():
         n1=2*(p//4)+1
         n2=2*(q//4)+1
     # Return the product of the two primes
-    return p * q
+    return p, q
 
 # Function to generate a Blum Blum Shub pseudorandom sequence of length n
 def BBS(n):
     # Generate Blum integer (product of two primes p and q, where p ≡ 3 (mod 4) and q ≡ 3 (mod 4))
-    num = gen_pq()
+    p, q= gen_pq_BBS()
+    num=p*q
     # Choose a random seed y such that MCD(y, num) == 1
     y = random.randint(RANGE_START,RANGE_END)
     while MCD(y, num) != 1:
